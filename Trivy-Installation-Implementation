@@ -13,14 +13,21 @@ sudo apt-get install trivy
 
 ---COMMANDS---
 
+## scan image
 trivy image imagename
 
+##scan kubernetes yaml
 trivy fs --security-checks vuln,config   Folder_name_OR_Path
 
+
+##filter severity
 trivy image --severity HIGH,CRITICAL image_name
 
+##result in json file
 trivy image -f json -o results.json image_name
 
+##
 trivy repo repo-url
 
+##scan kubernetes cluster
 trivy k8s --report summary cluster
